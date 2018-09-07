@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="static/css/normalize.css">
+    <title>Dream Machine</title>
+  </head>
+  <body id='dreams-app'>
+    <p>Hello World</p>
+
+    <div v-for="user in users" class='flex dream-list-item'>
+      <h4>
+        <button v-on:click='user.isCollapsed=!user.isCollapsed'>
+          {{ user.name.first }}'s Dream
+          <svg viewBox="0 0 10 10" v-if="">
+            <rect v-show="user.isCollapsed" class="vert" height="8" width="2" y="1" x="4" />
+            <rect height="2" width="8" y="4" x="1" />
+          </svg>
+        </button>
+      </h4>
+      <p v-bind:class="{ collapsed: user.isCollapsed }">
+        Some contect about <em>{{ user.name.first }} {{ user.name.last }}'s</em>
+        dream should go here.
+        There should be something about the author and something
+        about their storyin the restaurant. What kind of food are
+        they looking for? Who are they with? Etc...
+      </p>
+    </div>
+    
+  </body>
+</html>
