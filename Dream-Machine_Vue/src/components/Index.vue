@@ -1,5 +1,5 @@
 <template>
-  <div style='height: 100vh; overflow:hidden'>
+  <div style='height: 100vh;'>
 
     <transition name='fade' v-if='showSplash'>
     <section id='splash-page' class='flex flex-column'>
@@ -19,9 +19,10 @@
     </transition>
 
     <nav class='nav'>
-      <h3 class='nav-hero'>An Empathic Futures Lab Production</h3>
+      <h3 class='nav-hero start-logo' v-onScrollLeft><a href='http://empathicfutures.wordpress.com' target='_blank' class='start-logo'>An Empathic Futures Lab Production</a></h3>
+      <h3 class='nav-hero'><a href='http://empathicfutures.wordpress.com' target='_blank' class='logo' v-onScrollLeft>EFL</a></h3>
 
-      <div class='hamburger' v-on:click="toggleHamburger()">
+      <div class='hamburger' v-on:click="toggleHamburger()" v-onScrollRight>
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
@@ -31,7 +32,7 @@
           <div class='hamburger' v-on:click="toggleHamburger()">
             <h1>X</h1>
           </div>
-          <ul>
+          <ul class='flex ham-list'>
             <li class='ham-item'>Home</li>
             <li class='ham-item'>About</li>
           </ul>
@@ -39,57 +40,58 @@
       </transition>
     </nav>
 
-    <div class='snap-container'>
-      <section class='full-screen flex flex-column' v-vpshow>
-        <article class='content-container'>
+    <section class='full-screen flex flex-column' v-vpshow>
+      <article class='content-container'>
 
-          <img src='@/assets/picnic1.jpg' class='main-image item-center'>
-          <div class='flex caption'>
-            <h3 class='caption-title'>I<br class='title-break'> Dream<br class='title-break'> of a<br class='title-break'> Digital Picnic</h3>
-            <p class='flex caption-text'>
-              The physical tradition of dining is rich in social and sensorial interactions with the surrounding environment. That being said, our “environment” is no longer just the physical world - man made, natural or otherwise - but instead now includes non-physical artifacts such as those in the digital realm. I Dream of a Digital Picnic seeks to enhance the tradition of dining through the layering of responsive environmental elements, both physical and digital, with human thoughts and emotions. This would be done through use of “Dreams”: digital artifacts that, when created by a restaurant patron, would be embedded with a user-defined narrative and set of commands to be translated to the physical installation’s lights and speakers. These augmentations would work in concert with the physical elements of the restaurant in order to construct an environment more fully reflective of those dining within it.
-            </p>
-          </div>
+        <img src='@/assets/picnic1.jpg' class='main-image item-center'>
+        <div class='flex caption'>
+          <h3 class='caption-title'>I<br class='title-break'> Dream<br class='title-break'> of a<br class='title-break'> Digital Picnic</h3>
+          <p class='flex caption-text'>
+            The physical tradition of dining is rich in social and sensorial interactions with the surrounding environment. That being said, our “environment” is no longer just the physical world - man made, natural or otherwise - but instead now includes non-physical artifacts such as those in the digital realm. I Dream of a Digital Picnic seeks to enhance the tradition of dining through the layering of responsive environmental elements, both physical and digital, with human thoughts and emotions. This would be done through use of “Dreams”: digital artifacts that, when created by a restaurant patron, would be embedded with a user-defined narrative and set of commands to be translated to the physical installation’s lights and speakers. These augmentations would work in concert with the physical elements of the restaurant in order to construct an environment more fully reflective of those dining within it.
+          </p>
+        </div>
 
-        </article>
-      </section>
+      </article>
+    </section>
 
-      <section class='full-screen flex' v-vpshow>
-        <article class='content-container'>
+    <section class='full-screen flex' v-vpshow>
+      <article class='content-container'>
 
-          <img src='@/assets/picnic2.jpg' class='main-image item-center'>
-          <div class='flex caption caption-text center'>
-            The physical tradition of dining is rich in social and sensorial interactions with the surrounding environment.That being said, our “environment” is no longer just the physical world - man made, natural or otherwise - but instead now includes non-physical artifacts such as those in the digital realm. I Dream of a Digital Picnic (IDoaDP) seeks to enhance the tradition of dining through the layering of responsive environmental elements, both physical and digital, with human thoughts and emotions. This will be done by creating a micro-environment around a restaurant table through the use of a suspended thermo-plastic armature with controllable lights and speakers. A kiosk on the table will use a web-application to translate user-created digital artifacts, what we call “Dreams”, into environmental factors thus allowing the user to craft an experience fitting their current emotions, food choices, and other factors influencing their current disposition. Where traditionally the restaurant is responsible for the entire dining experience, this proposal allows the patrons and restaurant to work together in concert.
-          </div>
+        <img src='@/assets/picnic2.jpg' class='main-image item-center'>
+        <div class='flex caption caption-text center'>
+          The physical tradition of dining is rich in social and sensorial interactions with the surrounding environment.That being said, our “environment” is no longer just the physical world - man made, natural or otherwise - but instead now includes non-physical artifacts such as those in the digital realm. I Dream of a Digital Picnic (IDoaDP) seeks to enhance the tradition of dining through the layering of responsive environmental elements, both physical and digital, with human thoughts and emotions. This will be done by creating a micro-environment around a restaurant table through the use of a suspended thermo-plastic armature with controllable lights and speakers. A kiosk on the table will use a web-application to translate user-created digital artifacts, what we call “Dreams”, into environmental factors thus allowing the user to craft an experience fitting their current emotions, food choices, and other factors influencing their current disposition. Where traditionally the restaurant is responsible for the entire dining experience, this proposal allows the patrons and restaurant to work together in concert.
+        </div>
 
-        </article>
-      </section>
+      </article>
+    </section>
 
-      <section class='full-screen flex' v-vpshow>
-        <article class='content-container'>
+    <section class='full-screen flex' v-vpshow>
+      <article class='content-container'>
 
-          <img src='@/assets/picnic3.jpg' class='main-image item-center'>
-          <div class='flex caption caption-text center'>
-            The physical tradition of dining is rich in social and sensorial interactions with the surrounding environment.That being said, our “environment” is no longer just the physical world - man made, natural or otherwise - but instead now includes non-physical artifacts such as those in the digital realm. I Dream of a Digital Picnic (IDoaDP) seeks to enhance the tradition of dining through the layering of responsive environmental elements, both physical and digital, with human thoughts and emotions. This will be done by creating a micro-environment around a restaurant table through the use of a suspended thermo-plastic armature with controllable lights and speakers. A kiosk on the table will use a web-application to translate user-created digital artifacts, what we call “Dreams”, into environmental factors thus allowing the user to craft an experience fitting their current emotions, food choices, and other factors influencing their current disposition. Where traditionally the restaurant is responsible for the entire dining experience, this proposal allows the patrons and restaurant to work together in concert.
-          </div>
+        <img src='@/assets/picnic3.jpg' class='main-image item-center'>
+        <div class='flex caption caption-text center'>
+          The physical tradition of dining is rich in social and sensorial interactions with the surrounding environment.That being said, our “environment” is no longer just the physical world - man made, natural or otherwise - but instead now includes non-physical artifacts such as those in the digital realm. I Dream of a Digital Picnic (IDoaDP) seeks to enhance the tradition of dining through the layering of responsive environmental elements, both physical and digital, with human thoughts and emotions. This will be done by creating a micro-environment around a restaurant table through the use of a suspended thermo-plastic armature with controllable lights and speakers. A kiosk on the table will use a web-application to translate user-created digital artifacts, what we call “Dreams”, into environmental factors thus allowing the user to craft an experience fitting their current emotions, food choices, and other factors influencing their current disposition. Where traditionally the restaurant is responsible for the entire dining experience, this proposal allows the patrons and restaurant to work together in concert.
+        </div>
 
-        </article>
-      </section>
+      </article>
+    </section>
 
-      <section class='full-screen flex' v-vpshow>
+    <section class='full-screen flex' v-vpshow>
 
-        <article class='content-container' style='width:80%;'>
-          <h1 class='item-center'>Coming Soon</h1>
-          <div class='flex caption caption-text center'>Keep checking back for more information</div>
-        </article>
+      <article class='content-container' style='width:80%;'>
+        <h1 class='item-center'>Coming Soon</h1>
+        <div class='flex caption caption-text center'>Keep checking back for more information</div>
+      </article>
 
-      </section>
-    </div>
+    </section>
+
   </div>
 </template>
 
 <script>
   import { vpshow } from '@/directives/vpshow.js';
+  import { onScrollLeft } from '@/directives/onScrollLeft.js';
+  import { onScrollRight } from '@/directives/onScrollRight.js';
 
   export default {
     data() {
@@ -107,6 +109,8 @@
     },
     directives: {
       vpshow,
+      onScrollLeft,
+      onScrollRight,
     },
     methods: {
       toggleHamburger() {
@@ -144,11 +148,16 @@
 
   #splash-close {
     margin: auto;
-    padding: 0;
+    padding: .5em;
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+    border-radius: 5px;
   }
   #splash-close:hover {
     cursor: pointer;
     z-index: 20;
+    transform: scale(1.5);
   }
 
   #splash-loading {
@@ -207,6 +216,15 @@
     font-family: 'Cabin', sans-serif;
   }
 
+  a.logo {
+    all: inherit;
+    width: fit-content;
+  }
+
+  a.start-logo {
+    color: inherit;
+  }
+
   .nav {
     position: fixed;
     width: 100%;
@@ -236,13 +254,23 @@
     width: fit-content;
   }
 
+  h3.nav-hero:hover {
+    color: #654ea3;
+    cursor: pointer;
+  }
+
   .hamburger {
     display: inline-block;
     cursor: pointer;
     position: fixed;
     top: 2%;
     right: 2%;
-    transform: translateX(-100%);
+  }
+
+  div.hamburger h1:hover {
+    transform: scale(1.5);
+    color: #654ea3;
+    cursor: pointer;
   }
 
   h1.exit-button {
@@ -266,15 +294,32 @@
     left: 0;
     height: 100%;
     width: 100%;
-    padding: 1em;
+    padding: 5em;
     text-align: center;
     margin: 0;
   }
 
+  .ham-list {
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+  }
+
   .ham-item {
+    display: flex;
+    width: fit-content;
     list-style-position: inside;
     list-style-type: none;
-    padding: .25em 5em;
+    padding: .25em;
+    margin: 0 auto;
+    font-size: 3em;
+    color: black;
+  }
+
+  .ham-item:hover {
+    transform: scale(1.5);
+    color: #654ea3;
+    cursor: pointer;
   }
 
   div.snap-container {
@@ -350,7 +395,38 @@
   }
 
   .enter {
-  transition: opacity 2s ease;
+    transition: opacity 2s ease;
+  }
+
+  .start-logo.scroll-left-start {
+    transform: translateX(60px);
+    opacity: 100%;
+  }
+
+  .start-logo.scroll-left {
+    transform: translateX(0);
+    opacity: 0;
+    transition: all 1s ease;
+  }
+
+  a.scroll-left-start {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+
+  a.scroll-left {
+    transform: translateX(0);
+    opacity: 100%;
+    transition: all 1s ease-out;
+  }
+
+  .scroll-right-start {
+    transform: translateX(-60px);
+  }
+
+  .scroll-right {
+    transform: translateX(0);
+    transition: all 1s ease;
   }
 
   .slide-down-enter-active, .slide-down-leave-active {

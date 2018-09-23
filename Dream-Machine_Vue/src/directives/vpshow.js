@@ -21,7 +21,7 @@ export const vpshow = {
   },
 
   inserted(el, binding) {
-    el.parentElement.addEventListener('scroll', el.$onScroll);
+    document.addEventListener('scroll', el.$onScroll);
     el.$onScroll()
   },
 
