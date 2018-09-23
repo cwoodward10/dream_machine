@@ -77,7 +77,12 @@
       </section>
 
       <section class='full-screen flex' v-vpshow>
-        <h1 class='item-center'>Coming Soon</h1>
+
+        <article class='content-container' style='width:80%;'>
+          <h1 class='item-center'>Coming Soon</h1>
+          <div class='flex caption caption-text center'>Keep checking back for more information</div>
+        </article>
+
       </section>
     </div>
   </div>
@@ -119,6 +124,8 @@
 
 <style>
 
+  @import url('https://fonts.googleapis.com/css?family=Cabin|Josefin+Sans');
+
   #splash-page {
     position: fixed;
     height: 105vh;
@@ -145,12 +152,11 @@
   }
 
   #splash-loading {
-    width: 30%;
+    width: 25%;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 50%;
     z-index: -1;
   }
 
@@ -160,19 +166,21 @@
     top: 50%;
     left: 50%;
     z-index: -1;
+    opacity: 25%;
   }
 
   .rotator-outer {
-    animation: spin 10s infinite linear;
-    -webkit-animation: spin 10s infinite linear;
-  }
-  .rotator-middle {
     animation: spin 15s infinite linear;
     -webkit-animation: spin 15s infinite linear;
   }
+  .rotator-middle {
+    animation: spin-ccw 10s infinite linear;
+    -webkit-animation: spin-ccw 10s infinite linear;
+  }
   .rotator-inner {
-    animation: spin 5s infinite linear;
-    -webkit-animation: spin 5s infinite linear;
+    animation: spin 30s infinite linear;
+    -webkit-animation: spin 30s infinite linear;
+    display: none;
   }
 
   @keyframes spin {
@@ -184,18 +192,30 @@
       }
   }
 
+  @keyframes spin-ccw {
+      from{
+          transform: translate(-50%,-50%) rotate(0deg);
+      }
+      to{
+          transform: translate(-50%,-50%) rotate(-360deg);
+      }
+  }
+
   h1 {
     padding: 0;
     margin: 0;
+    font-family: 'Cabin', sans-serif;
   }
 
   .nav {
     position: fixed;
     width: 100%;
     background-color: rgba(0,0,0,0);
+    color: #333;
     top: 0;
     vertical-align: middle;
     z-index: 15;
+    font-family: 'Josefin Sans', sans-serif;
   }
 
   .flex {
@@ -288,13 +308,14 @@
 
   .caption {
     margin: 0 auto;
-    width: 100%;
+    width: 80%;
   }
 
   .caption-title {
     width: fit-content;
     text-align: right;
     padding-right: 1em;
+    font-family: 'Cabin', sans-serif;
   }
 
   @media only screen and (max-width: 767px) {
@@ -313,6 +334,7 @@
     font-size: .75em;
     text-align: justify;
     flex: 1;
+    font-family: 'Cabin', sans-serif;
   }
 
   .item-center {
