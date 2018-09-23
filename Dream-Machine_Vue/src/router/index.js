@@ -3,13 +3,14 @@ import Router from 'vue-router';
 import HelloWorld from '@/components/HelloWorld';
 //  import HomeIndex from '@/components/HomeIndex';
 import DreamsApp from '@/components/DreamsApp';
+import Index from '@/components/Index.vue'
 
 Vue.use(Router);
 
 export default new Router({
   routes: [
     //  {
-    //    path: '/',
+    //    path: '/HomeIndex',
     //    name: 'HomeIndex',
     //    component: HomeIndex,
     //  },
@@ -22,6 +23,11 @@ export default new Router({
       path: '/Dreams',
       name: 'DreamsApp',
       component: DreamsApp,
+    },
+    {
+      path: '/',
+      name: 'Index',
+      component: Index,
     },
   ],
   mode: 'hash',

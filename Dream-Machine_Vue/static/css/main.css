@@ -328,7 +328,6 @@ p.collapsed {
   position: relative;
   left: 40%;
   top: 10%;
-  z-index: -10;
 }
 
 /* transition elements */
